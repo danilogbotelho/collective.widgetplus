@@ -1,0 +1,15 @@
+<configure
+ xmlns="http://namespaces.zope.org/zope"
+ xmlns:browser="http://namespaces.zope.org/browser">
+
+ <browser:page
+  for="zope.formlib.interfaces.IWidget"
+  name="index_html"
+  permission="zope.Public"
+  class=".browser.WidgetView"/>
+
+ <browser:defaultView
+     name="index_html"
+     for="zope.formlib.interfaces.IWidget" />
+
+</configure>

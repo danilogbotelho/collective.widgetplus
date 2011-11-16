@@ -1,0 +1,38 @@
+<configure
+ xmlns="http://namespaces.zope.org/zope"
+ xmlns:browser="http://namespaces.zope.org/browser"
+ xmlns:zcml="http://namespaces.zope.org/zcml">
+
+  <adapter
+      name="widget"
+      provides="zope.traversing.interfaces.ITraversable"
+      for="zope.formlib.interfaces.IForm"
+      factory=".namespace.WidgetHandler"
+      />
+ 
+  <view
+      name="widget"
+      type="zope.interface.Interface"
+      provides="zope.traversing.interfaces.ITraversable"
+      for="zope.formlib.interfaces.IForm"
+      factory=".namespace.WidgetHandler"
+      />
+
+ <configure zcml:condition="installed grokcore.formlib">
+   <adapter
+       name="widget"
+       provides="zope.traversing.interfaces.ITraversable"
+       for="grokcore.formlib.interfaces.IGrokForm"
+       factory=".namespace.WidgetHandler"
+       />
+ 
+   <view
+       name="widget"
+       type="zope.interface.Interface"
+       provides="zope.traversing.interfaces.ITraversable"
+       for="grokcore.formlib.interfaces.IGrokForm"
+       factory=".namespace.WidgetHandler"
+       />
+ </configure>
+ 
+</configure>
